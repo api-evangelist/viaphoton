@@ -1,0 +1,156 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Live anonymous HTTP probes (browser User-Agent) of the named /.well-known/ path list against every
+  viaPhoton host discovered in STEP 0b — the marketing site, the public product configurator, and the
+  configurator's backing API host.
+note: >-
+  Zero documents were served. No WellKnown, SecurityTxt, APICatalog or AgentCard pointer is emitted,
+  because every path missed. www.viaphoton.com sits behind a SiteGround anti-bot interstitial
+  (sgcaptcha) that answers HTTP 202 with a 190-220 byte HTML meta-refresh for EVERY path, including a
+  negative-control path that cannot exist — so none of its 202s is a document and all are recorded as
+  misses. configure.viaphoton.com and pp-api.viaphoton.com return honest 404s and both passed the
+  negative control.
+hit_count: 0
+hosts:
+- host: https://viaphoton.com
+  server: SiteGround / sgcaptcha interstitial
+  soft_404_control:
+    path: /.well-known/viaphoton-negative-control-7f3ab91c.json
+    status: 202
+    bytes: 223
+    verdict: catch-all — every path answers 202 with the same bot-challenge shell
+  path_echo_control: failed
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/openid-configuration
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/api-catalog
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/ucp.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/acp.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/aauth-resource.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/agent-card.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+  - path: /.well-known/agent.json
+    status: 202
+    file: null
+    note: bot-challenge HTML, not a document
+- host: https://configure.viaphoton.com
+  server: Apache/2.4.59 (Debian), PHP/7.4.2
+  soft_404_control:
+    path: /.well-known/viaphoton-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 14375
+    verdict: passed — host returns a genuine 404
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: https://pp-api.viaphoton.com
+  server: Node/Express behind an AWS ALB (digital-production-alb, us-east-2)
+  note: >-
+    Backing API host for the public product configurator. Root returns the Express placeholder
+    "If you're reading this, at least the server didn't crash." It is a first-party viaPhoton host
+    but is not a published developer API — no spec, no reference, no discovery documents.
+  soft_404_control:
+    path: /.well-known/viaphoton-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 191
+    verdict: passed — host returns a genuine Express 404
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/aauth-resource.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

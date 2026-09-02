@@ -1,0 +1,21 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  viaPhoton public web surface, September 2026. No developer documentation of any kind is published,
+  so no rate limits, quotas, or throttling headers are documented.
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  viaPhoton publishes no public API and no developer documentation, so there is nothing to document
+  a limit against. The one first-party API host discovered — https://pp-api.viaphoton.com, the
+  Node/Express service behind the public product configurator — is an application backend, not a
+  published developer API; it is authenticated with a key embedded in the configurator page and
+  carries no published reference, no spec, and no limit documentation. No live request was made
+  against it, so no runtime rate-limit header was observed.
+evidence:
+- url: https://pp-api.viaphoton.com/
+  status: 200
+  note: Express placeholder response; no docs, no spec, no headers documented
+- url: https://pp-api.viaphoton.com/docs
+  status: 404

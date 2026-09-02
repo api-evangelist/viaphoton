@@ -1,0 +1,60 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  Unauthenticated registry metadata sweep (npm, PyPI, RubyGems, crates.io, Packagist, NuGet, Maven
+  Central, proxy.golang.org) plus an enumeration of the viaPhoton GitHub organization.
+package_count: 0
+official_sdk_count: 0
+packages: []
+note: >-
+  viaPhoton publishes no first-party client library in any public package registry. There is no
+  public API for an SDK to wrap. No SDKs pointer is emitted.
+registries_probed:
+- registry: npm
+  query: viaphoton
+  endpoint: https://registry.npmjs.org/-/v1/search?text=viaphoton
+  results: 0
+- registry: npm
+  query: '@viaphoton scope'
+  endpoint: https://registry.npmjs.org/@viaphoton%2Fsdk
+  status: 404
+- registry: pypi
+  query: viaphoton
+  endpoint: https://pypi.org/pypi/viaphoton/json
+  status: 404
+- registry: rubygems
+  query: viaphoton
+  endpoint: https://rubygems.org/api/v1/gems/viaphoton.json
+  status: 404
+- registry: crates.io
+  query: viaphoton
+  endpoint: https://crates.io/api/v1/crates?q=viaphoton
+  results: 0
+- registry: packagist
+  query: viaphoton
+  endpoint: https://packagist.org/search.json?q=viaphoton
+  results: 0
+  note: only unrelated "viaphone" packages matched
+- registry: nuget
+  query: viaphoton
+  endpoint: https://azuresearch-usnc.nuget.org/query?q=viaphoton
+  results: 0
+- registry: maven-central
+  query: viaphoton
+  endpoint: https://search.maven.org/solrsearch/select?q=viaphoton
+  results: 0
+- registry: go-modules
+  query: github.com/viaphoton
+  endpoint: https://proxy.golang.org/github.com/viaphoton/@v/list
+  status: 404
+source_repositories:
+- url: https://github.com/viaPhoton
+  public_repos: 4
+  note: >-
+    The organization exists and is active, but ships no client library. Two repositories (QReader,
+    qrdet) are forks of Eric-Canas/QReader and Eric-Canas/qrdet — third-party QR-detection projects,
+    not viaPhoton software. model-zoo holds ML model weights. PolarityExtractor is first-party
+    (last pushed 2026-08-12): an internal TypeScript web app that extracts fiber-optic polarity maps
+    from engineering drawings using Claude vision and injects them into test-plan templates. It
+    contains an Express service under apps/api/ but publishes no OpenAPI, is not hosted publicly,
+    and is not distributed as a package.

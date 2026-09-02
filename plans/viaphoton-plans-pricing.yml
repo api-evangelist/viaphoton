@@ -1,0 +1,24 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  viaPhoton public web surface (viaphoton.com and configure.viaphoton.com), September 2026. No
+  pricing, plans, or rate-card page is published.
+plan_count: 0
+plans: []
+note: >-
+  viaPhoton is a fiber optic connectivity manufacturer with no API product and therefore no API
+  plans. Its commercial motion is configure-price-quote: a buyer builds an assembly in the public
+  product configurator at https://configure.viaphoton.com/ (Inside Plant and Outside Plant
+  applications) and a quote is returned through sales, with a separate credit application at
+  https://viaphoton.com/credit-application/. No list price, tier, quota, or overage is published
+  anywhere on the public site.
+pricing_model: quote-only (configure-price-quote)
+evidence:
+- url: https://configure.viaphoton.com/
+  status: 200
+  note: public product configurator landing page — no prices shown, CTA is "START" into a CPQ flow
+- url: https://viaphoton.com/
+  status: 202
+  note: >-
+    marketing site answers a SiteGround anti-bot interstitial to non-browser clients; no pricing
+    page appears in its indexed page set
