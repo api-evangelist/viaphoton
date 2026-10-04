@@ -22,7 +22,7 @@ tags:
 - Fiber Optics
 - Telecommunications
 - Networking
-- Data-Center
+- Data Center
 - Broadband
 - Manufacturing
 - Hardware
@@ -39,6 +39,7 @@ tags_raw:
 - Hardware
 - Connectivity
 - 5G
+- Data-Center
 apis: []
 maintainers:
 - FN: Kin Lane
